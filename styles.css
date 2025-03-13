@@ -1,0 +1,99 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.captcha-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    position: relative; /* Allows absolute positioning for child elements */
+}
+
+.captcha-container h1 {
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+    transform: scale(1.5) rotate(20deg);
+}
+
+.checkbox-container label {
+    font-size: 1.2em;
+    color: #333333;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    opacity: 0;
+    animation: fadeInResult 0.5s forwards;
+}
+
+/* Small gray text in bottom-right corner */
+.bottom-text {
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    font-size: 0.8em;
+    color: gray;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInResult {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
